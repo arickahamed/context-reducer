@@ -4,11 +4,12 @@ import Second from './Second';
 
 const First = () => {
     const {state} = useContext(CreateContext);
-    const {post, loading, error} = state;
+    const {post, loading} = state;
+    // console.log(post);
     return (
         <div>
+            <h1 style={{textAlign: "center", color: "blue"}}>{loading ? "loading..." : post.userId}</h1>
             <Second />
-            <h1 style={{textAlign: "center", color: "blue"}}>{post.userId}</h1>
         </div>
     )
 }

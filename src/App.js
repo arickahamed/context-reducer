@@ -17,7 +17,7 @@ function App() {
       <First />
       <div>
       <h1>Complex Counter LWS</h1>
-      <h3 style={style}>Title : {state.loading ? loading : post.title}</h3>
+      <h3 style={style}>Title : {loading ? "loading..." : post.title}</h3>
         {error || null}
       </div>
     </div>
