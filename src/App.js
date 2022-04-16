@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import { useContext } from 'react';
 import './App.css';
+import CreateContext from './components/context/CreateContext';
+import First from './components/First';
 
 function App() {
+  const {state} = useContext(CreateContext);
+  const {post, loading, error} = state;
+  // console.log(post);
+
+  const style = {
+    color: "red"
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <First />
+      <div>
+      <h1>Complex Counter LWS</h1>
+      <h3 style={style}>Title : {state.loading ? loading : post.title}</h3>
+        {error || null}
+      </div>
     </div>
   );
 }
